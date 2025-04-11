@@ -5,16 +5,13 @@ import { IoClose } from "react-icons/io5";
 const Modal = ({ children, className, isOpen, toggle }) => {
   if (!isOpen) return null;
 
-  console.log(toggle);
-  console.log(children);
-
   return (
     <div
       className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm"
       role="alert"
     >
       <div
-        className={`relative shadow-lg bg-slate-300 rounded-md flex items-center flex-col mx-2 overflow-hidden ${className}`}
+        className={`relative shadow-lg bg-slate-300 rounded-md overflow-hidden ${className}`}
       >
         <button
           type="button"

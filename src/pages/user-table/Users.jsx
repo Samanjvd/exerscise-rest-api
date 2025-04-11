@@ -51,7 +51,7 @@ function Users() {
   const editUserHandle = () => {};
 
   if (userInfo.length === 0) {
-    return <h1 className="text-center">Loading...</h1>;
+    return <h1 className="flex justify-center items-center">Loading...</h1>;
   }
 
   return (
@@ -116,10 +116,12 @@ function Users() {
         </table>
       </div>
 
+      {/* Delete Modal */}
+
       <Modal
         isOpen={isDelModal}
         toggle={closeDelModal}
-        className="justify-between w-full max-w-sm h-full max-h-52"
+        className="flex items-center flex-col justify-between w-full max-w-sm h-full max-h-52 mx-2"
       >
         <h3 className="h-full flex items-center ">
           Are you sure to delete this user?
@@ -141,29 +143,36 @@ function Users() {
           </button>
         </div>
       </Modal>
+
+      {/* Edit Modal */}
+
       <Modal
         isOpen={isEditModal}
         toggle={closeEditModal}
-        className="justify-between w-full max-w-sm h-full max-h-80"
+        className="flex  justify-center w-full max-w-sm h-full max-h-80"
       >
-        <div className=" flex flex-col   ">
+        <div className=" flex flex-col pt-12 pb-7">
           <div className="flex flex-col w-full h-full">
             <label>
-              <span className="w-full">FirstName:</span>
-              <input className="w-full" type="text" />
+              <span className="w-full pb-1">FirstName:</span>
+              <input className="w-full p-1 rounded" type="text" />
             </label>
             <label>
-              <span className="w-full">LastName:</span>
-              <input className="w-full" type="text" />
+              <span className="w-full pb-1">LastName:</span>
+              <input className="w-full p-1 rounded" type="text" />
             </label>
             <label>
-              <span className="w-full">Email:</span>
-              <input className="w-full" type="email" />
+              <span className="w-full pb-1">Email:</span>
+              <input className="w-full p-1 rounded" type="email" />
             </label>
           </div>
           <div className="">
-            <button type="button" className=" py-4" onClick={editUserHandle}>
-              submit
+            <button
+              type="button"
+              className="w-full p-2 rounded"
+              onClick={editUserHandle}
+            >
+              Edit
             </button>
           </div>
         </div>

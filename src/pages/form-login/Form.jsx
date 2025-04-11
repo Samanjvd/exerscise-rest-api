@@ -39,48 +39,50 @@ export default function Form() {
   };
 
   return (
-    <div className="w-[360px] bg-white mx-auto custom-shadow p-3 font-Roboto">
-      <form
-        className="flex flex-col justify-evenly p-3"
-        autoComplete="off"
-        onSubmit={registerHandler}
-      >
-        <input
-          id="first-name"
-          value={firstName}
-          onChange={(event) => setFirstName(event.target.value)}
-          className="form-field my-3 p-4 text-base border-none"
-          type="text"
-          placeholder="First Name"
-          name="firstName"
-        />
-        <input
-          id="last-name"
-          value={lastName}
-          onChange={(event) => setLastName(event.target.value)}
-          className="form-field my-3 p-4 text-base border-none"
-          type="text"
-          placeholder="Last Name"
-          name="lastName"
-        />
-
-        <input
-          id="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          className="form-field my-3 p-4 text-base border-none"
-          type="text"
-          placeholder="Email"
-          name="email"
-        />
-        <button
-          className="form-field my-3 p-4 text-base border-none"
-          type="submit"
-          // onClick={() => navigate("/users")}
+    <div className="h-screen flex justify-center items-center">
+      <div className="w-[360px] bg-white mx-auto custom-shadow p-3 font-Roboto">
+        <form
+          className="flex flex-col justify-evenly p-3"
+          autoComplete="off"
+          onSubmit={registerHandler}
         >
-          Register
-        </button>
-      </form>
+          <input
+            id="first-name"
+            value={firstName}
+            onChange={(event) => setFirstName(event.target.value)}
+            className="my-3 p-4 text-base border-none"
+            type="text"
+            placeholder="First Name"
+            name="firstName"
+          />
+          <input
+            id="last-name"
+            value={lastName}
+            onChange={(event) => setLastName(event.target.value)}
+            className="my-3 p-4 text-base border-none"
+            type="text"
+            placeholder="Last Name"
+            name="lastName"
+          />
+
+          <input
+            id="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className="my-3 p-4 text-base border-none"
+            type="text"
+            placeholder="Email"
+            name="email"
+          />
+          <button
+            className="my-3 p-4 text-base border-none"
+            type="submit"
+            // onClick={() => navigate("/users")}
+          >
+            Register
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
