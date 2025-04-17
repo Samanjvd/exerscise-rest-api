@@ -8,6 +8,9 @@ function Users() {
   const [userID, setUserID] = useState([]);
   const [isDelModal, setIsDelModal] = useState(false);
   const [isEditModal, setIsEditModal] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const response = async () => {
@@ -149,32 +152,42 @@ function Users() {
       <Modal
         isOpen={isEditModal}
         toggle={closeEditModal}
-        className="flex  justify-center w-full max-w-sm h-full max-h-80"
+        className="flex flex-col  w-full max-w-md h-full max-h-80 pt-12 pb-7 px-4"
       >
-        <div className=" flex flex-col pt-12 pb-7">
-          <div className="flex flex-col w-full h-full">
-            <label>
-              <span className="w-full pb-1">FirstName:</span>
-              <input className="w-full p-1 rounded" type="text" />
-            </label>
-            <label>
-              <span className="w-full pb-1">LastName:</span>
-              <input className="w-full p-1 rounded" type="text" />
-            </label>
-            <label>
-              <span className="w-full pb-1">Email:</span>
-              <input className="w-full p-1 rounded" type="email" />
-            </label>
-          </div>
-          <div className="">
-            <button
-              type="button"
-              className="w-full p-2 rounded"
-              onClick={editUserHandle}
-            >
-              Edit
-            </button>
-          </div>
+        <div className="flex flex-col w-full h-full gap-1">
+          <label>
+            <span className="w-full pb-1">FirstName:</span>
+            <input
+              type="text"
+              className="w-full p-1 rounded"
+              onChange={(event) => setFirstName(event.target.value)}
+            />
+          </label>
+          <label>
+            <span className="w-full pb-1">LastName:</span>
+            <input
+              type="text"
+              className="w-full p-1 rounded"
+              onChange={(event) => setLastName(event.target.value)}
+            />
+          </label>
+          <label>
+            <span className="w-full pb-1">Email:</span>
+            <input
+              type="email"
+              className="w-full p-1 rounded"
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </label>
+        </div>
+        <div className="">
+          <button
+            type="button"
+            className="w-full p-2 rounded"
+            onClick={editUserHandle}
+          >
+            Edit
+          </button>
         </div>
       </Modal>
     </div>
